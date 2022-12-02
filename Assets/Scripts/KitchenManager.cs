@@ -60,7 +60,7 @@ public class KitchenManager : MonoBehaviour
 
         forestText = forestGameObject.GetComponent<TextMeshProUGUI>();
         pondText = pondGameObject.GetComponent<TextMeshProUGUI>();
-        // I think I removed a line here
+        coopText= coopGameObject.GetComponent<TextMeshProUGUI>();
         servedText = servedGameObject.GetComponent<TextMeshProUGUI>();
         chefStatusText = chefStatusObject.GetComponent<TextMeshProUGUI>();
     }
@@ -93,7 +93,7 @@ public class KitchenManager : MonoBehaviour
                 chefState = CurrentOperation.BoneTurkey;
                 break;
             case CurrentOperation.BoneTurkey:
-                currentDuck.Debone();
+                currentTurkey.Debone();
                 chefState = CurrentOperation.AssembleTurDuckEn;
                 break;
             case CurrentOperation.AssembleTurDuckEn:
@@ -158,7 +158,7 @@ public class KitchenManager : MonoBehaviour
         {
             foreach (int weight in duckPond.GetRemainingDuckWeights())
             {
-                forestText.text += weight.ToString() + " ";
+                pondText.text += weight.ToString() + " ";
             }
         }
         else
